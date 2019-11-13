@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Main {
         public static void main(String[] args) {
             Scanner scn = new Scanner(System.in);
-            long n =scn.nextLong();
-            while (n>0){
-                System.out.print(n%10);
-                n/=10;
+            int n=scn.nextInt();
+            int k=n;
+            while (n>=3){
+                k+=n/3;
+                n=n/3+n%3;
             }
-            System.out.println();
-
+            System.out.println(k);
         }
 }
