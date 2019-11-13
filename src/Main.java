@@ -1,24 +1,19 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
-
-    public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int i =1,j=1;
-        while (i<=n){
-            System.out.print(i+"\t");
-            i=i+j;
-            j++;
-        }
-        System.out.println(i);
-        i=1;
-        while (i<=n+1){
-            for (int k =1;k<=i;k++){
-                System.out.print(i+"\t");
+        public static void main(String[] args) {
+            Scanner scn = new Scanner(System.in);
+            int count =0;
+            int n=scn.nextInt();
+            BigInteger res =new BigInteger("1");
+            for (int i =n;i>1;i--){
+                res=res.multiply(new BigInteger(Integer.toString(i)));
             }
-            i++;
+            while (res.mod(new BigInteger("10")).intValue()==0){
+                count++;
+                res =res.divide(new BigInteger("10"));
+            }
+            System.out.println(count);
         }
-        System.out.println();
-    }
 }
