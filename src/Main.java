@@ -4,15 +4,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        long n = scn.nextInt();
-        int sum=0;
-        int k =0;
-        while (n>0){
-            k++;
-            sum+=n%10;
-            n=n/10;
+        int n = scn.nextInt();
+        int i =1,j=1;
+        while (i<=n){
+            System.out.print(i+"\t");
+            i=i+j;
+            j++;
         }
-        System.out.println(k);
-        System.out.println(sum);
+        System.out.println(i);
+        i=1;
+        while (i<=n+1){
+            for (int k =1;k<=i;k++){
+                System.out.print(i+"\t");
+            }
+            i++;
+        }
+        System.out.println();
     }
 }
